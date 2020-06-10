@@ -20,7 +20,8 @@ def interval_mask(score_trace, left, right):
     return mask
 
 def bool_func_mask(score_trace, weights, bool_func):
-    pass
+    mask = np.array([bool_func(x) for x in score_trace])
+    return mask
 
 def _estimate_numenator(score_trace, mask, weights):
     return np.mean(mask / weights[score_trace])
