@@ -23,27 +23,27 @@ def bool_func_mask(score_trace, weights, bool_func):
     mask = np.array([bool_func(x) for x in score_trace])
     return mask
 
-def _estimate_numenator(score_trace, mask, weights):
-    return np.mean(mask / weights[score_trace])
+def _estimate_numenator(mask, weights):
+    return np.mean(mask / weights)
 
-def _estimate_denominator(score_trace, mask, weights):
-    return np.mean(1 / weights[score_trace])
+def _estimate_denominator(weights):
+    return np.mean(1 / weights)
 
 def moving_average(a, n=3) :
     ret = np.cumsum(a, dtype=float)
     ret[n:] = ret[n:] - ret[:-n]
     return ret[n - 1:] / n
 
-def varianceOBM(score_trace, weights, mask):
+def varianceOBM(weights, mask):
     #mask = interval_mask(score_trace, left, right)
 
-    h1 = _estimate_numenator(score_trace, mask, weights)
-    h2 = _estimate_denominator(score_trace, mask, weights)
+    h1 = _estimate_numenator(mask, weights)
+    h2 = _estimate_denominator(weights)
 
-    num_arr = mask / weights[score_trace]
-    denom_arr = 1/ weights[score_trace]
+    num_arr = mask / weights
+    denom_arr = 1/ weights
 
-    N = score_trace.size
+    N = weights.size
     batch_size = int(np.sqrt(N))
 
     batches_num = moving_average(num_arr, batch_size)
