@@ -1,6 +1,6 @@
 # small_probs
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3867194.svg)](https://doi.org/10.5281/zenodo.3867194)
+[![DOI](https://zenodo.org/badge/268039456.svg)](https://zenodo.org/badge/latestdoi/268039456)
 
 This is the framework for estimation of small probabilities!
 
