@@ -6,13 +6,11 @@ This is the framework for estimation of small probabilities!
 
 ## Getting started
 
-### Install from pip
+### Install stable version from PyPI
 
-First, we need pymc3_ext:
+`pip install small-probs-wlad111`
 
-`pip install git+https://github.com/wlad111/pymc3.git`
-
-Then install `small_probs` with `pip`:
+### Install from sources
 
 `pip install git+https://github.com/wlad111/small_probs.git`
 
