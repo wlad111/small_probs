@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="small_probs-wlad111",
-    version="0.2.0",
+    version="0.2.2",
     author="Vladislav Strashko",
     author_email="wlad962961@gmail.com",
     description="framework for estimating small probabilities using MCMC based on PyMC3-like probability model",
